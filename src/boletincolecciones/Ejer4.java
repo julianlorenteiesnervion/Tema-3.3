@@ -5,24 +5,19 @@ import java.util.*;
 public class Ejer4 {
 
 	public static void main(String[] args) {
+		// Método random
 		Random random = new Random();
 		
-		ArrayList<Integer>numbers = new ArrayList<>();
+		// Declaramos la lista tree
+		Set<Integer>numbers = new TreeSet<>();
 		
-		int randomNum;
-		boolean sameNum;
-		
-		for (int i = 0; i < 20; i++) {
-			do {
-				sameNum = false;
-				randomNum = random.nextInt(0, 100);
-					if (numbers.contains(randomNum))
-						sameNum = true;
-			} while (sameNum);
-			numbers.add(randomNum);
-			Collections.sort(numbers);
+		// Mientras el tamaño de la lista sea menor que 20, añadimos un número aleatorio
+		while (numbers.size() < 20) {
+			numbers.add(random.nextInt(1, 100));
+			
 		}
 		
+		// Imprimimos la lista
 		System.out.print(numbers);
 	}
 }
